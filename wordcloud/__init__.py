@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # Author: Andreas Christian Mueller <amueller@ais.uni-bonn.de>
 # (c) 2012
 # Modified by: Paul Nechifor <paul@nechifor.net>
