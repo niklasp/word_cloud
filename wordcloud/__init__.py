@@ -66,7 +66,7 @@ def fit_words(words, font_path=None, width=400, height=200,
         raise ValueError("The font %s does not exist." % font_path)
     
     # create image
-    img_grey = Image.new("RGB", (width, height), "white")
+    img_grey = Image.new("L", (width, height), 255)
     draw = ImageDraw.Draw(img_grey)
     integral = np.zeros((height, width), dtype=np.uint32)
     img_array = np.asarray(img_grey)
