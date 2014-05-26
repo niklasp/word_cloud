@@ -132,10 +132,10 @@ def fit_words(words, font_path=None, width=400, height=200,
 
         integral[x:, y:] = partial_integral
 
-    return zip(words, font_sizes, positions, orientations)
+    return zip(words, font_sizes, positions, orientations   )
 
 def random_color_func(word, font_size, position, orientation):
-    return "hsl(%d" % random.randint(0, 255) + ", 80%, 50%)"
+    return "hsl(%d" % random.randint(0, 255) + ", 90%, 80%)"
 
 def draw(elements, file_name, font_path=None, width=400, height=200, scale=1,
         color_func=random_color_func):
