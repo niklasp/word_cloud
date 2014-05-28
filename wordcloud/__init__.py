@@ -17,7 +17,7 @@ from PIL import ImageDraw
 from PIL import ImageFont
 from query_integral_image import query_integral_image
 
-FONT_PATH = "/usr/share/fonts/truetype/droid/DroidSansMono.ttf"
+FONT_PATH = os.path.join(os.path.dirname(__file__),"SourceSansPro-Semibold.otf")
 STOPWORDS = set([x.strip() for x in open(os.path.join(os.path.dirname(__file__),
         'stopwords')).read().split('\n')])
 
@@ -135,7 +135,7 @@ def fit_words(words, font_path=None, width=400, height=200,
     return zip(words, font_sizes, positions, orientations   )
 
 def random_color_func(word, font_size, position, orientation):
-    return "hsl(%d" % random.randint(0, 255) + ", 90%, 80%)"
+    return "hsl(%d" % random.randint(0, 255) + ", 50%, 80%)"
 
 def draw(elements, file_name, font_path=None, width=400, height=200, scale=1,
         color_func=random_color_func):
@@ -143,7 +143,7 @@ def draw(elements, file_name, font_path=None, width=400, height=200, scale=1,
     if font_path is None:
         font_path = FONT_PATH
         
-    img = Image.new("RGB", (width * scale, height * scale))
+    img = Image.new("RGB", (width * scale, height * scale), (255,255,255))
     draw = ImageDraw.Draw(img)
     for (word, count), font_size, position, orientation in elements:
         font = ImageFont.truetype(font_path, font_size * scale)
